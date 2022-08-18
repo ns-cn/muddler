@@ -1,5 +1,5 @@
 # muddler
-muddler: merge helper for SVN
+muddler: merge helper for SVN（macOS&Linux only）
 
 核心功能：查看svn提交记录的文件变更、合并文件变更到其他目录
 > 用于解决svn命令行合并代码的不便
