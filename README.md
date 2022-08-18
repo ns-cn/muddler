@@ -1,2 +1,2 @@
 # muddler
-muddler for SVN(merge helper)
+muddler: merge helper for SVN

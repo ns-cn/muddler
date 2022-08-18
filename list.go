@@ -7,12 +7,6 @@ import (
 	"os"
 )
 
-var (
-	branch   string   // 仓库位置，不指定则为当前目录
-	authors  []string // 过滤用：作者
-	revision string   // 修订版本区间，svn方式，可指定具体版本或版本区间
-	last     int      // 最近的修订版本次数指定，只查看最近的多少次提交
-)
 var cmdList = &cobra.Command{
 	Use:     "list",
 	Aliases: []string{"l"},
@@ -25,11 +19,11 @@ var cmdList = &cobra.Command{
 			cmd.Help()
 			return
 		}
-		for _, fileUpdate := range fileUpdates {
-			if fileUpdate.IsDeleted {
-				fmt.Println("deleted\t" + fileUpdate.Path)
+		for file, isDelete := range fileUpdates {
+			if isDelete {
+				fmt.Println("deleted\t" + file)
 			} else {
-				fmt.Println("updated\t" + fileUpdate.Path)
+				fmt.Println("updated\t" + file)
 			}
 		}
 	},
