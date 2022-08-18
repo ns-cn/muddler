@@ -16,7 +16,7 @@ var cmdList = &cobra.Command{
 查看仓库最近10次提交： muddler list -b ./code/svn -l 10
 查看仓库指定版本号的提交： muddler list -b ./code/svn -r 1024
 查看仓库指定版本区间的提交： muddler list -b ./code/svn -r 1024:2048
-可选增加
+可选增加preview用于是否预览，还是直接合并
 `,
 	Run: func(cmd *cobra.Command, args []string) {
 		fileUpdates, err := svn.Log(branch, authors, revision, last)

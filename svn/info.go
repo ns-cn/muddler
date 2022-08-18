@@ -51,6 +51,9 @@ func Info(dir string) Information {
 			if strings.HasPrefix(line, constants.H_RELATIVE_URL) {
 				urlRelative = line[len(constants.H_RELATIVE_URL) : len(line)-1]
 				break
+			} else if strings.HasPrefix(line, constants.H_RELATIVE_URL_CN) {
+				urlRelative = line[len(constants.H_RELATIVE_URL_CN) : len(line)-1]
+				break
 			}
 		}
 	}
