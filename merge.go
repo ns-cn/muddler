@@ -23,9 +23,9 @@ var cmdMerge = &cobra.Command{
 	Short:   "合并变更",
 	Long: `功能： 【查询svn提交记录的文件变更并合并到指定目录】
 必要参数：源分支branch(b)、目标分支target(t,可多选)、版本范围（last(l)或revision(r)）
-存放仓库最近10次提交到指定目录： muddler list -b ./code/svn -t ./update-20220818 -l 10
-合并指定分支版本到另外多个分支： muddler list -b ./code/svn -t ./branch1 -t ./branch2 -r 1024
-合并仓库指定版本区间的提交到另外一个分支： muddler list -b ./code/svn -r 1024:2048 -t ./branch1
+存放仓库最近10次提交到指定目录： muddler merge -b ./code/svn -t ./update-20220818 -l 10
+合并指定分支版本到另外多个分支： muddler merge -b ./code/svn -t ./branch1 -t ./branch2 -r 1024
+合并仓库指定版本区间的提交到另外一个分支： muddler merge -b ./code/svn -r 1024:2048 -t ./branch1
 `,
 	Run: func(cmd *cobra.Command, args []string) {
 		workDir, err := os.Getwd()
